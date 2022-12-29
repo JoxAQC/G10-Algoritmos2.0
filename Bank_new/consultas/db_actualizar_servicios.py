@@ -2,7 +2,7 @@ import sqlite3
 
 class Db_actualizar_servicios:
     def __init__(self, codigo_deuda):
-        self.__path = r'DataBase\banquito.db'
+        self.__path = r"Bank_new/DataBase/banquito.db"
         self.__conexion = sqlite3.Connection(self.__path)
         self.__cursor = self.__conexion.cursor()
         self.__codigo_deuda = codigo_deuda

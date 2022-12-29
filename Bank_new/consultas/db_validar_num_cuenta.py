@@ -5,7 +5,7 @@ class Db_validar_num_cuenta:
     def __init__(self, num_cuenta, tabla):
         self.__num_cuenta = num_cuenta
         self.__tabla = tabla
-        file_database = "DataBase/banquito.db"
+        file_database ="Bank_new/DataBase/banquito.db"
         self.__cursor = sqlite3.Connection(file_database).cursor()
 
     def existe_cuenta(self):

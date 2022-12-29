@@ -3,7 +3,7 @@ import sqlite3
 class Db_validar_codigo_deuda:
     def __init__(self, codigo_deuda):
         self.__codigo_deuda=codigo_deuda
-        self.__path="DataBase/banquito.db"
+        self.__path="Bank_new/DataBase/banquito.db"
         self.__cursor = sqlite3.Connection(self.__path).cursor()
 
     def existe_codigo_deuda(self):

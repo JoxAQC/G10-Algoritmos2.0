@@ -3,7 +3,7 @@ import sqlite3
 class Db_devolver_servicios:
     def __init__(self, num_cuenta):
         self.num_cuenta = num_cuenta
-        self.__path = r'DataBase\banquito.db'
+        self.__path = r"Bank_new/DataBase/banquito.db"
         self.__cursor = sqlite3.Connection(self.__path).cursor()
 
     def devolver_servicios(self):

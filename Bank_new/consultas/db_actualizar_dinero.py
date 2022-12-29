@@ -6,7 +6,7 @@ import pdfkit
 
 class Db_actualizar_dinero:
     def __init__(self,num_cuenta,dinero,tabla):
-        self.__path=r'DataBase\banquito.db'
+        self.__path=r"Bank_new/DataBase/banquito.db"
         self.conexionCuentas = sqlite3.Connection(self.__path)
         self.id=self.generar_numero(9)
         self.num_cuenta = num_cuenta

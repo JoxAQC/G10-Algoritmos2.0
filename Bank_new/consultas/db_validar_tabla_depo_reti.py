@@ -2,7 +2,7 @@ import sqlite3
 
 class Db_validar_tabla_depo_reti:
     def __init__(self,id,num_cuenta,saldo,fecha,hora,tabla):
-        self.__path=r'DataBase\banquito.db'
+        self.__path=r"Bank_new/DataBase/banquito.db"
         self.conexionCuentas = sqlite3.Connection(self.__path)
         self.num_cuenta=num_cuenta
         self.saldo=saldo

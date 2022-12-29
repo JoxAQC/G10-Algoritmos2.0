@@ -2,7 +2,7 @@ import sqlite3
 class Db_validar_tarjeta:
     def __init__(self, num_cuenta):
         self.__num_cuenta = num_cuenta
-        file_database = "DataBase/banquito.db"
+        file_database = "Bank_new/DataBase/banquito.db"
         self.__conexion = sqlite3.Connection(file_database)
         self.__cursor = self.__conexion.cursor()
 

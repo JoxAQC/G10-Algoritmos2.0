@@ -6,7 +6,7 @@ class Db_validar_recepcionista:
         self.__cuenta = cuenta
         self.__contra = contra
         self.__cargo = cargo
-        file_database = "DataBase/banquito.db"
+        file_database = "Bank_new/DataBase/banquito.db"
         self.__cursor = sqlite3.Connection(file_database).cursor()
 
     def existe_cuenta_recepcionista(self):

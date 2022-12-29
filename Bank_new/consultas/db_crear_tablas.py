@@ -1,6 +1,6 @@
 import sqlite3
 
-file_database = "DataBase/banquito.db"
+file_database = "Bank_new/DataBase/banquito.db"
 
 
 def createDataBase():
