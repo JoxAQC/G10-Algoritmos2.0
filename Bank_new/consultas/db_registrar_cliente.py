@@ -1,14 +1,12 @@
 import sqlite3
 
 from funciones.persona import Persona
-from generador.generar import Generar
-
 
 class Db_registrar_cliente(Persona):
     def __init__(self, id_cliente, dni, nom, ape_pa, ape_ma, correo, fecha, cel, cel_ope):
         super().__init__(dni, nom, ape_pa, ape_ma, correo, fecha, cel, cel_ope)
         self.id_cliente = id_cliente
-        self.num_cuenta = Generar.generar_num_cuenta(dni)
+        self.num_cuenta = input("Ingrese el numero de cuenta: ")
         file_database = "Bank_new/DataBase/banquito.db"
         self.__conexion = sqlite3.Connection(file_database)
         self.__cursor = self.__conexion.cursor()

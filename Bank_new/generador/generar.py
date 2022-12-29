@@ -15,8 +15,9 @@ class Generar:
 
         id_tarjeta = str(uuid.uuid1())
         status = "Activo"
+        bloqueo = "desbloqueado"
         ele_tarjeta = [id_tarjeta, self.num_cuenta, self.crear_numero(self.num_tarje), self.generar_fecha_venc(),
-                       self.generar_codigo_ccv(), self.generar_clave(), status]
+                       self.generar_codigo_ccv(), self.generar_clave(), status,bloqueo]
         return ele_tarjeta
 
     def gen_aleatorio(self, bin):
@@ -90,9 +91,9 @@ class Generar:
         clave = encMessage
         return clave
 
-    def generar_num_cuenta(self):
-        num1 = str(random.randint(100, 1000))
-        num2 = str(random.randint(1000, 10000))
-        num3 = str(random.randint(1000, 10000))
-        num_cuenta = "191"+num1+num2+num3
-        return num_cuenta
+    # def generar_num_cuenta(self):
+    #     num1 = str(random.randint(100, 1000))
+    #     num2 = str(random.randint(1000, 10000))
+    #     num3 = str(random.randint(1000, 10000))
+    #     num_cuenta = "191"+num1+num2+num3
+    #     return num_cuenta

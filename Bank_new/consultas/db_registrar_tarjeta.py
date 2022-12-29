@@ -8,7 +8,7 @@ class Db_registrar_tarjeta:
         self.__cursor = self.__conexion.cursor()
 
     def registrar_tarjeta(self):
-        self.__cursor.execute(f"INSERT INTO tarjeta VALUES (?,?,?,?,?,?,?)", self.__datos)
+        self.__cursor.execute(f"INSERT INTO tarjeta VALUES (?,?,?,?,?,?,?,?)", self.__datos)
         self.__conexion.commit()
         self.__conexion.close()
         print("Tarjeta registrada exitosamente")
