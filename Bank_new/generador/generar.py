@@ -2,6 +2,7 @@ import random
 import datetime
 import uuid
 import getpass
+import sqlite3
 from cryptography.fernet import Fernet
 # Falta la llave y guardarlo
 
@@ -91,9 +92,18 @@ class Generar:
         clave = encMessage
         return clave
 
-    # def generar_num_cuenta(self):
-    #     num1 = str(random.randint(100, 1000))
-    #     num2 = str(random.randint(1000, 10000))
-    #     num3 = str(random.randint(1000, 10000))
-    #     num_cuenta = "191"+num1+num2+num3
-    #     return num_cuenta
+    def agregar_columna_bloqueo(self):
+        connection_obj = sqlite3.connect('Bank_new/DataBase/banquito.db')
+        cursor_obj = connection_obj.cursor()
+        new_column = "ALTER TABLE tarjeta ADD COLUMN bloqueo CHAR(25)"
+        cursor_obj.execute(new_column)
+        connection_obj.commit()
+        connection_obj.close()
+    
+    def agregar_predeterminado_bloqueo(self):
+        connection_obj = sqlite3.connect('Bank_new/DataBase/banquito.db')
+        cursor_obj = connection_obj.cursor()
+        new_column = "UPDATE tarjeta SET bloqueo='desbloqueado' WHERE status='Activo' "
+        cursor_obj.execute(new_column)
+        connection_obj.commit()
+        connection_obj.close()
