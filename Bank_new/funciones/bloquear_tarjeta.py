@@ -38,7 +38,7 @@ class Bloquear_tarjeta:
         num_cuenta = str(dato[0]) 
         connection_obj2 = sqlite3.connect('Bank_new/DataBase/banquito.db')
         cursor_obj = connection_obj2.cursor()
-        new_column = f"UPDATE tarjeta SET bloqueo='naranja' WHERE num_cuenta='{num_cuenta}'"
+        new_column = f"UPDATE tarjeta SET bloqueo='bloqueado' WHERE num_cuenta='{num_cuenta}'"
         cursor_obj.execute(new_column)
         connection_obj2.commit()
         connection_obj2.close()
